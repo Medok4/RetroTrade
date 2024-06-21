@@ -1,0 +1,1523 @@
+@font-face {
+    font-family: "small_text" ;
+    src: url(/Main/Fonts/Montserrat-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: "big_text";
+    src: url(/Main/Fonts/determinationmonorusbylyajk.otf);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+header{
+    width: 100%;
+    height: 100vh;
+}
+
+nav{
+    width: 100%;
+    height: 10vh;
+    background-color: #9055A2;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed; 
+    /* Спасиба артёму за Фиксд */
+    z-index: 2;
+}
+
+.logo_a{
+    cursor: pointer;
+    width: 15%;
+    height: 7.5vh;
+}
+
+.logo_img{
+    width: 100%;
+    height: 7.5vh;
+}
+
+.search_bar{
+    width: 46%;
+    height: 6.8vh;
+    background-color: #D9D9D9;
+    border-style: none;
+    background-image: url(/Main/Pictures/Search_icon.png);
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: 6%;
+    font-family: "small_text";
+    font-size: 15px;
+    text-indent: 6%;
+    color: #4A4A4A;
+}
+
+.login_and_burger{
+    width: 9%;
+    height: 4.5vh;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 5%;
+}
+
+.nav_img{
+    height: 4.4vh;
+    width: 25%;
+    cursor: pointer;
+}
+
+.pop_up{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(34,34,34,0.6);
+    bottom: 0.01vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    z-index: 6;
+}
+
+.login{
+    width: 60%;
+    height: 69vh;
+    background-color: #D9D9D9;
+    cursor: default;
+    border-radius: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.text_and_closeb{
+    width: 80%;
+    height: 6.5vh;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3%;
+}
+
+.pop_big_text{
+    font-family: "big_text";
+    font-size: 50px;
+}
+
+.pop_close{
+    cursor: pointer;
+}
+
+.login_input{
+    width: 80%;
+    height: 9vh;
+    border: black 3px solid;
+    border-radius: 100px;
+    font-family: "small_text";
+    font-size: 17px;
+    text-indent: 4%;
+}
+
+.login_input:invalid{
+    color: red;
+}
+
+.a_of_enter{
+    width: 36%;
+    height: 9vh;
+    text-decoration: none;
+}
+
+.enter{
+    width: 100%;
+    height: 9vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: none;
+    background-color: #9055A2;
+    font-family: "small_text";
+    font-size: 17px;
+    color: white;
+    border-radius: 100px;
+    margin-top: 1%;
+    cursor: pointer;
+}
+
+.new_or_not{
+    width: 80%;
+    height: 3vh;
+    display: flex;
+    font-family: "small_text";
+    font-size: 17px;
+    justify-content: space-between;
+    margin-bottom: 2%;
+    
+}
+
+.down_plz{
+    margin-top: 3%;
+}
+
+.non_style{
+    text-decoration: none;
+    color: #4A4A4A;
+}
+
+.burger_menu{
+    width: 26%;
+    height: 100vh;
+    background-color: #9055A2;
+    position: fixed;
+    float: right;
+    visibility: hidden;
+    transition: 0.5s all ease;
+    right: -10%;
+    opacity: 0;
+    z-index: 6;
+    
+}
+
+.burger_top_bun{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.burger_logo_close{
+    height: 4.5vh;
+    width: 9%;
+    position: relative;
+    right: 15%;
+    cursor: pointer;
+}
+
+.li{
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.li>ul{
+    width: 80%;
+    height: 50vh;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    bottom: 5%;
+}
+
+
+.li>ul>a{
+    width: 65%;
+    height: 3vh;
+    text-align: center;
+    font-family: "small_text";
+    color: white;
+    font-size: 17px;
+    margin-top: 10%;
+    text-decoration: none;
+}
+
+.li>ul>a>li{
+    transition: 0.5s all ease;
+}
+
+.li>ul>a>li:hover{
+    transition: 0.5s all ease;
+    color: black;
+    background-color: #D499B9;
+    border-radius: 50px;
+}
+
+.social_media{
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.5s all ease;
+    width: 65%;
+    background-color: #D499B9;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8vh;
+    position: absolute;
+}
+
+.social_media_active{
+    width: 65%;
+    height: 3vh;
+    text-align: center;
+    font-family: "small_text";
+    font-size: 17px;
+    margin-top: -8%;
+    transition: 0.5s all ease;
+    color: white;
+    margin-top: 10%;
+    cursor:pointer;
+}
+
+.social_media_active:hover>.social_media{
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(10px);
+    transition: 0.5s all ease;
+}
+
+.social_space{
+    width: 100%;
+    height: 8vh;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+.social_icon{
+    width: 100%;
+    height: 6vh;
+    margin-top: 7%;
+}
+
+.video_place{
+    width: 100%;
+    height: 100vh;
+    background-color: #9055A2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.gameplay{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    opacity: 0.3;
+    z-index: 0;
+    position: absolute;
+    filter: blur(10px);
+}
+
+.head_big_text{
+    z-index: 1;
+    color: white;
+    font-family: "big_text";
+    font-size: 90px;
+}
+
+.head_small_text{
+    z-index: 1;
+    color: white;
+    font-family: "small_text";
+    font-size: 17px;
+    width: 44%;
+    text-align: center;
+    position: relative;
+    top: 6%;
+}
+
+/* .section1{
+    width: 100%;
+    height: 100vh;
+    background: url(/Main/Pictures/Section1_Background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+} 
+
+.sec1_top_half{
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+}
+
+.sec1_bottom_half{
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.sec1_big_text{
+    color: white;
+    font-family: "big_text";
+    font-size: 90px;
+    width: 30%;
+    text-align: center;
+    margin-left: 8%;
+}
+
+.sec1_small_text{
+    color: white;
+    font-family: "small_text";
+    font-size: 17px;
+    text-align: center;
+    width: 40%;
+    position: relative;
+    right: 7%;
+    top: 10%;
+}
+
+.section2{
+    width: 100%;
+    height: 90vh;
+}
+
+.sec2_top{
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+}
+
+.sec2_big_text{
+    color: black;
+    font-family: "big_text";
+    font-size: 90px;
+    width: 50%;
+    text-align: center;
+    position: relative;
+    left: 5%;
+}
+
+.sec2_bottom{
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.cat_div{
+    width: 50%;
+    height: 40vh;
+    border-radius: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #9055A2;
+}
+
+.snes{
+    width: 37%;
+    height: 50vh;
+}
+
+.cat_text{
+    color: white;
+    font-family: "small_text";
+    font-size: 17px;
+    width: 90%;
+    text-align: center;
+}
+
+.button_space{
+    width: 35%;
+    height: 10vh;
+}
+
+.button_itself{
+    width: 100%;
+    height: 10vh;
+    background-color: #D9D9D9;
+    color: black;
+    font-family: "small_text";
+    font-size: 17px;
+    border-style: none;
+    border-radius: 100px;
+    cursor: pointer;
+} */
+
+footer{
+    width: 100%;
+    height: 10vh;
+    background-color: #9055A2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+footer>p{
+    font-family: "small_text";
+    font-size: 17;
+}
+
+.main_space{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+.slider_space{
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.info_space{
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.swiper {
+  width: 80%;
+  height: 60vh;
+}
+
+.slider_img{
+    width: 100%;
+    height: 55vh;
+    cursor: grab;
+}
+
+.swiper-pagination-bullet{
+    background-color: #D9D9D9;
+    width: 3%;
+    height: 2vh;
+    /* bottom: 10vh; */
+}
+
+.swiper-paginations-bullet-active{
+    background-color: gray;
+}
+
+.swiper-button-next, .swiper-button-prev{
+    background-position: center;
+    background-size: 40px;
+    background-repeat: no-repeat;
+    padding: 8px 16px;
+    border-radius: 100%;
+    margin-top: -5vh;
+}
+
+.swiper-button-prev {
+    background-image: url("/Lot_Earth/Pictures/Slider_Prev.png");
+    background-size: cover;
+}
+
+.swiper-button-next {
+    background-image: url("/Lot_Earth/Pictures/Slider_Next.png");
+    background-size: cover;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    content: "";
+}
+
+.information{
+    width: 80%;
+    height: 55vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    top: 4vh;
+}
+
+.lot_title{
+    font-size: 24px;
+    font-family: "small_text";
+    font-weight: 500;
+    width: 100%;
+    height: 8vh;
+}
+
+.lol_subtitle{
+    height: 6vh;
+}
+
+.rating{
+    display: flex;
+    height: 5vh;
+    width: 10%;
+    align-items: center;
+}
+
+.rating>p{
+    font-family: "small_text";
+    font-size: 17px;
+}
+
+.rating>img{
+    width: 50%;
+    height: 5vh;
+}
+
+.information_space{
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    position: relative;
+}
+
+.info1{
+    width: 50%;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    gap: 8%;
+}
+
+.info2{
+    width: 50%;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    gap: 8%;
+}
+
+.gray_text{
+    font-family: "small_text";
+    font-family: 17px;
+    color: #4A4A4A;
+}
+
+.black_text{
+    font-family: "small_text";
+    font-family: 17px;
+}
+
+.price_tag{
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    gap: 5%;
+}
+
+.red_price{
+    font-size: 24px;
+    font-family: "small_text";
+    color: red;
+    font-weight: 500;
+    margin-left: 10%;
+}
+
+.gray_price{
+    font-size: 17px;
+    font-family: "small_text";
+    color: #4A4A4A;
+    text-decoration: line-through;
+}
+
+.two_buttons{
+    width: 100%;
+    height: 9vh;
+    display: flex;
+    gap: 10%;
+}
+
+.two_buttons>a{
+    width: 60%;
+    height: 9vh;
+}
+
+.add_to_cart{
+    width: 100%;
+    height: 9vh;
+    border: none;
+    background-color: #9055A2;
+    color: white;
+    font-family: "small_text";
+    font-size: 17px;
+    border-radius: 100px;
+    cursor: pointer;
+    position: relative;
+    top: 2vh;
+}
+
+.fav_button{
+    cursor: pointer;
+    position: relative;
+    top: 2vh;
+}
+
+.all_together_now{
+    width: 80%;
+    height: 14vh;
+    position: relative;
+    top: 6vh;
+}
+
+main{
+    width: 100%;
+    height: 90vh;
+}
+
+.section1{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.i_tired{
+    width: 95%;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #D499B9;
+}
+
+.i_tired>p{
+    font-family: "small_text";
+    font-size: 27px;
+    width: 18%;
+    font-weight: 500;
+    position: relative;
+    left: 2%;
+}
+
+.slider_space1{
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+}
+
+.space_inside{
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+}
+
+.go_left{
+    width: 5%;
+    height: 9vh;
+    position: absolute;
+    z-index: 5;
+    cursor: pointer;
+}
+
+.go_left>img{
+    width: 100%;
+    height: 9vh;
+}
+
+.go_right{
+    width: 5%;
+    height: 9vh;
+    position: absolute;
+    left: 92.5%;
+    z-index: 5;
+    cursor: pointer;
+}
+
+.go_right>img{
+    width: 100%;
+    height: 9vh;
+}
+
+.lot1{
+    width: 55%;
+    height: 30vh;
+    background-color: #D9D9D9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+}
+
+.lot_img{
+    width: 100%;
+    height: 19vh;
+}
+
+.img_div{
+    width: 85%;
+    height: 19vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.price_tag{
+    width: 85%;
+    height: 2.5vh;
+    display: flex;
+    align-items: center;
+    gap: 5%;
+}
+
+.red_num{
+    font-size: 17px;
+    color: red;
+    font-family: "small_text";
+    font-weight:500;
+}
+
+.grey_num{
+    font-size: 17px;
+    color: grey;
+    text-decoration: line-through;
+}
+
+.lot_name{
+    width: 85%;
+    font-size: 16px;
+    font-family: "small_text";
+}
+
+.lot_bench{
+    width: 50%;
+    height: 30vh;
+    margin-top: 7vh;
+    margin-left: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.fav_button1{
+    position: absolute;
+    width: 12%;
+    height: 6vh;
+    margin-left: 30%;
+    margin-top: 1vh;
+    cursor: pointer;
+}
+
+.slider_square{
+    width: 100%;
+    height: 40vh;
+    overflow: hidden;
+}
+
+.slider_linee{
+    width: 150%;
+    height: 40vh;
+    display: flex;
+    justify-content: space-between;
+    transition: 0.5s all ease;
+    align-items: center;
+    position: relative;
+    right: 25%;
+}
+
+.last_step{
+    width: 91%;
+    height: 40vh;
+    position: relative;
+    top:10vh;
+    right: 2%;
+}
+
+.last_big_text{
+    display: flex;
+}
+
+.review{
+    font-family: "small_text";
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.zero{
+    font-family: "small_text";
+    font-size: 17px;
+
+}
+
+.omg>p{
+    color: #666666;
+    font-family: "small_text";
+    font-size: 17px;
+}
+
+.omg{
+    width: 100%;
+    height: 36vh;
+    display: flex;
+    align-items: center;
+}
+
+.lot1>a{
+    text-decoration: none;
+    color: black;
+    position: relative;
+    left: 7%;
+}
+
+.img_div>a{
+    width: 100%;
+    height: 19vh;
+}
+
+.slider_space1{
+    width: 95%;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.swiper2{
+    width: 113%;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.style1{
+    background-image: url("/Lot_Earth/Pictures/Slider_Prev1.png");
+    background-size: cover;
+}
+
+.style2{
+    background-image: url("/Lot_Earth/Pictures/Slider_Next1.png");
+    background-size: cover;
+}
+
+.style1, .style2{
+    position: absolute;
+    top: 125vh;
+}
+
+.lazyone{
+    width: 95%;
+}
+
+.lazyone>p{
+    font-family: "small_text";
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.mobile{
+    display: none;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    
+    .logo_a{
+        width: 20%;
+        height: 6vh;
+    }
+    
+    .logo_img{
+        height: 6vh;
+    }
+    
+    .search_bar{
+        background-size: 8%;
+        font-size: 13px;
+        text-indent: 8%;
+    }
+    
+    .nav_img{
+        height: 4.4vh;
+        width: 30%;
+    }
+    
+    .login_and_burger{
+        width: 13%;
+        height: 4.5vh;
+        display: flex;
+        justify-content: space-between;
+        margin-left: 5%;
+    }
+    
+    .head_big_text{
+        font-size: 70px;
+        text-align: center;
+    }
+    
+    .head_small_text{
+        z-index: 1;
+        color: white;
+        font-family: "small_text";
+        font-size: 13px;
+        width: 55%;
+        text-align: center;
+        position: relative;
+        top: 0%;
+    }
+    
+    footer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    footer>p{
+        font-size: 13px;
+        text-align: center;
+        width: 80%;
+    }
+    
+    .login{
+        width: 80%;
+        justify-content: space-evenly;
+    }
+    
+    .pop_big_text{
+        font-family: "big_text";
+        font-size: 40px;
+    }
+    
+    .pop_close{
+        width: 9%;
+    }
+    
+    .burger_menu{
+        width: 40%;
+    }
+    
+    .burger_logo_close{
+        height: 4.5vh;
+        width: 10%;
+        position: relative;
+        right: 7%;
+        cursor: pointer;
+    }
+    
+    .li>ul>a{
+        font-size: 13px;
+    }
+    
+    .social_media_active{
+        font-size: 13px;
+    }
+    
+    .create_text{
+        font-size: 40px;
+    }
+    
+    .login_input{
+        font-size: 13px;
+    }  
+    
+    .enter{
+        font-size: 13px;
+    }
+    
+    .non_style{
+        font-size: 13px;
+    }
+
+    .main_space{
+        height: 75vh;
+    }
+
+    .slider_space{
+        height: 75vh;
+    }
+
+    .tab{
+        display: none;
+    }
+
+    .slider_img{
+        height: 40vh;
+    }
+
+    .swiper{
+        height: 45vh;
+    }
+
+    .info_space{
+        height: 75vh;
+    }
+
+    .information{
+        height: 40vh;
+        gap: 2vh;
+        position: relative;
+        top: 3.5vh;
+    }
+
+    .lot_title{
+        font-size: 17px;
+    }
+
+    .gray_text{
+        font-size: 13px;
+    }
+
+    .black_text{
+        font-size: 13px;
+    }
+
+    .rating>p{
+        font-size: 13px;
+    }
+
+    .rating{
+        width: 15%;
+        height: 3vh;
+    }
+
+    .info1{
+        gap:1vh;
+    }
+    .info2{
+        gap:2.2vh;
+    }
+
+    .all_together_now{
+        height: 11.5vh;
+        top: 8vh;
+    }
+
+    .red_price{
+        font-size: 17px;
+    }
+
+    .gray_price{
+        font-size: 13px;
+    }
+
+    .two_buttons>a{
+        width: 70%;
+    }
+
+    .two_buttons{
+        gap: 5%;
+    }
+
+    .add_to_cart{
+        font-size: 13px;
+        top: 0;
+    }
+
+    .fav_button{
+        top: 0;
+    }
+
+    header{
+        height: 85vh;
+    }
+
+    .lot1{
+        width: 60%;
+    }
+
+    .img_div{
+        height: 17vh;
+    }
+
+    .lot_img{
+        height: 17vh;
+    }
+
+    .red_num{
+        font-size: 13px;
+    }
+    
+    .grey_num{
+        font-size: 13px;
+        position: relative;
+        top: 0.1vh;
+    }
+    
+    .lot_name{
+        width: 85%;
+        font-size: 13px;
+    }
+
+    .price_tag{
+        margin-top: 0vh;
+        align-items: center;
+    }
+
+    .style1{
+        display: none;
+    }
+
+    .style2{
+        display: none;
+    }
+
+    .swiper2{
+        width: 115.5%;
+    }
+
+    .fav_button1{
+        width: 15%;
+        margin-left: 33%;
+        margin-top: 0.5vh;
+    }
+
+    .lazyone>p{
+        font-size: 20px;
+    }
+
+    .review{
+        font-size: 20px;
+    }
+
+    .zerp{
+        font-size: 10px;
+    }
+
+    .omg>p{
+        font-size: 13px;
+    }
+
+    .last_step{
+        top: 0;
+        height: 20vh;
+    }
+
+    .omg{
+        height: 15vh;
+    }
+    
+    .section1{
+        height: 70vh;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .slider_space1{
+        position: relative;
+        bottom: 5vh;
+    }
+
+    main{
+        height: 70vh;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .pc{
+        display: none;
+    }
+
+    .mobile{
+        display: block;
+    }
+
+    .logo_a{
+        width: 10%;
+        height: 7vh;
+    }
+
+    .logo_img{
+        height: 7vh;
+    }
+
+    nav{
+        z-index: 3;
+    }
+
+    .search_bar{
+        background-size: 15%;
+        font-size: 13px;
+        text-indent: 15%;
+        margin-left: 5%;
+    }
+
+    .login_and_burger{
+        width: 17%;
+        height: 5vh;
+        display: flex;
+        justify-content: space-between;
+        margin-left: 0%;
+    }
+
+    .nav_img{
+        height: 5vh;
+        width: 40%;
+    }
+    
+    header{
+        overflow-y: hidden;
+        height: 140vh;
+        width: 100%;
+    }
+
+    .head_big_text{
+        width: 80%;
+        font-size: 60px;
+        text-align: center;
+    }
+
+    footer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    footer>p{
+        font-size: 15px;
+        text-align: center;
+        width: 90%;
+    }
+
+    .login{
+        width: 90%;
+        justify-content: space-evenly;
+    }
+    
+    .pop_big_text{
+        font-family: "big_text";
+        font-size: 29px;
+        position: relative;
+        top: 0.5vh;
+    }
+    
+    .pop_close{
+        width: 14%;
+    }
+    
+    .login_input{
+        width: 80%;
+        height: 7vh;
+        font-size: 17px;
+    }
+
+    .login{
+        border-radius: 50px;
+        justify-content: space-evenly;
+    }
+
+    .new_or_not{
+        flex-direction: column;
+        align-items: center;
+        gap: 2vh;
+        position: relative;
+        bottom: 2vh;
+    }
+
+    .down_plz{
+        margin-top: 0%;
+    }
+
+    .burger_menu{
+        width: 100%;
+    }
+    
+    .burger_logo_close{
+        height: 5vh;
+        width: 7%;
+        position: relative;
+        right: 4%;
+        cursor: pointer;
+    }
+    
+    .li>ul>a{
+        font-size: 13px;
+    }
+    
+    .social_media_active{
+        font-size: 13px;
+    }
+
+    .login_input{
+        font-size: 13px;
+    }  
+
+    .enter{
+        font-size: 13px;
+    }
+    
+    .non_style{
+        font-size: 13px;
+    }
+
+    .main_space{
+        flex-direction: column;
+        height: 137vh;
+    }
+
+    .slider_space{
+        width: 100%;
+        height: 50vh;
+        margin-top: 14vh;
+    }
+
+    .slider_img{
+        height: 40vh;
+    }
+
+    .tab{
+        display: none;
+    }
+
+    .swiper{
+        height: 45vh;
+        width: 90%;
+    }
+
+    .info_space{
+        width: 100%;
+        height: 73vh;
+        justify-content:flex-start;
+    }
+
+    .lot_title{
+        text-align: center;
+        height: 15vh;
+        width: 100%;
+    }
+
+    .information{
+        width: 90%;
+        top: 0;
+    }
+
+    .all_together_now{
+        width: 90%;
+        height: 14vh;
+        top: -40vh;
+    }
+
+    .style1{
+        display: none;
+    }
+
+    .style2{
+        display: none;
+    }
+
+    .two_buttons>a{
+        width: 80%;
+    }
+
+    .add_to_cart{
+        font-size: 13px;
+    }
+    
+    .price_tag{
+        width: 100%;
+        height: 3vh;
+    }
+
+    .rating{
+        height: 3vh;
+        position: relative;
+        left: 26%;
+    }
+
+    .rating>img{
+        height: 3vh;
+    }
+
+    .information_space{
+        top: 17vh;
+        flex-direction: column;
+        height: 70vh;
+    }
+
+    .lol_subtitle{
+        position: relative;
+        top: 17vh;
+        height: 5vh;
+    }
+
+    .gray_text{
+        font-size: 13px;
+    }
+
+    .black_text{
+        font-size: 13px;
+    }
+
+    .info1{
+        width: 100%;
+        text-align: center;
+        gap: 1vh;
+        height: 20vh;
+    }
+
+    .info2{
+        width: 100%;
+        text-align: center;
+        gap: 1vh;
+        height: 20vh;
+    }
+    
+    .red_price{
+        margin-left: 16.5%;
+    }
+
+    .swiper2{
+        width: 111%;
+    }
+
+    .lot1{
+        width: 80%;
+    }
+    
+    .img_div{
+        height: 20vh;
+    }
+
+    .lot_img{
+        height: 20vh;
+    }
+
+    .red_num{
+        font-size: 13px;
+    }
+
+    .grey_num{
+        font-size: 13px;
+        top: 0.2vh;
+        position: relative;
+    }
+
+    .lot_name{
+        font-size: 13px;
+    }
+
+    .mb{
+        width: 85%;
+        align-items: center;
+    }   
+
+    .last_step{
+        top: 0;
+        width: 95%;
+        right: 0;
+        height: 20vh;
+    }
+
+    .omg{
+        height: 10vh;
+    }
+
+    .omg>p{
+        font-size: 13px;
+    }
+    
+    main{
+        height: 60vh;
+    }
+
+    .section1{
+        height: 60vh;
+    }
+
+    .fav_button1{
+        width: 20%;
+        margin-left: 45%;
+        margin-top: 0.5vh;
+    }
+}

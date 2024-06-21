@@ -1,0 +1,986 @@
+@font-face {
+    font-family: "small_text" ;
+    src: url(/Main/Fonts/Montserrat-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: "big_text";
+    src: url(/Main/Fonts/determinationmonorusbylyajk.otf);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+header{
+    width: 100%;
+    height: 90vh;
+    overflow-x: hidden;
+}
+
+nav{
+    width: 100%;
+    height: 10vh;
+    background-color: #9055A2;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed; 
+    /* Спасиба артёму за Фиксд */
+    z-index: 2;
+}
+
+.logo_a{
+    cursor: pointer;
+    width: 15%;
+    height: 7.5vh;
+}
+
+.logo_img{
+    width: 100%;
+    height: 7.5vh;
+}
+
+.search_bar{
+    width: 46%;
+    height: 6.8vh;
+    background-color: #D9D9D9;
+    border-style: none;
+    background-image: url(/Main/Pictures/Search_icon.png);
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: 6%;
+    font-family: "small_text";
+    font-size: 15px;
+    text-indent: 6%;
+    color: #4A4A4A;
+}
+
+.login_and_burger{
+    width: 9%;
+    height: 4.5vh;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 5%;
+}
+
+.nav_img{
+    height: 4.4vh;
+    width: 25%;
+    cursor: pointer;
+}
+
+.pop_up{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(34,34,34,0.6);
+    bottom: 0.01vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    z-index: 6;
+}
+
+.login{
+    width: 60%;
+    height: 69vh;
+    background-color: #D9D9D9;
+    cursor: default;
+    border-radius: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.text_and_closeb{
+    width: 80%;
+    height: 6.5vh;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3%;
+}
+
+.pop_big_text{
+    font-family: "big_text";
+    font-size: 50px;
+}
+
+.pop_close{
+    cursor: pointer;
+}
+
+.login_input{
+    width: 80%;
+    height: 9vh;
+    border: black 3px solid;
+    border-radius: 100px;
+    font-family: "small_text";
+    font-size: 17px;
+    text-indent: 4%;
+}
+
+.login_input:invalid{
+    color: red;
+}
+
+.a_of_enter{
+    width: 36%;
+    height: 9vh;
+    text-decoration: none;
+}
+
+.enter{
+    width: 100%;
+    height: 9vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: none;
+    background-color: #9055A2;
+    font-family: "small_text";
+    font-size: 17px;
+    color: white;
+    border-radius: 100px;
+    margin-top: 1%;
+    cursor: pointer;
+}
+
+.new_or_not{
+    width: 80%;
+    height: 3vh;
+    display: flex;
+    font-family: "small_text";
+    font-size: 17px;
+    justify-content: space-between;
+    margin-bottom: 2%;
+    
+}
+
+.down_plz{
+    margin-top: 3%;
+}
+
+.non_style{
+    text-decoration: none;
+    color: #4A4A4A;
+}
+
+.burger_menu{
+    width: 26%;
+    height: 100vh;
+    background-color: #9055A2;
+    position: fixed;
+    float: right;
+    visibility: hidden;
+    transition: 0.5s all ease;
+    right: -10%;
+    opacity: 0;
+    z-index: 6;
+    
+}
+
+.burger_top_bun{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.burger_logo_close{
+    height: 4.5vh;
+    width: 9%;
+    position: relative;
+    right: 15%;
+    cursor: pointer;
+}
+
+.li{
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.li>ul{
+    width: 80%;
+    height: 50vh;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    bottom: 5%;
+    
+}
+
+
+.li>ul>a{
+    width: 65%;
+    height: 3vh;
+    text-align: center;
+    font-family: "small_text";
+    color: white;
+    font-size: 17px;
+    margin-top: 10%;
+    transition: 0.5s all ease;
+    text-decoration: none;
+}
+
+.li>ul>a>li:hover{
+    transition: 0.5s all ease;
+    color: black;
+    background-color: #D499B9;
+    border-radius: 50px;
+}
+
+.social_media{
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.5s all ease;
+    width: 65%;
+    background-color: #D499B9;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8vh;
+    position: absolute;
+}
+
+.social_media_active{
+    width: 65%;
+    height: 3vh;
+    text-align: center;
+    font-family: "small_text";
+    font-size: 17px;
+    margin-top: -8%;
+    transition: 0.5s all ease;
+    color: white;
+    margin-top: 10%;
+    cursor:pointer;
+}
+
+.social_media_active:hover>.social_media{
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(10px);
+    transition: 0.5s all ease;
+}
+
+.social_space{
+    width: 100%;
+    height: 8vh;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+.social_icon{
+    width: 100%;
+    height: 6vh;
+    margin-top: 7%;
+}
+
+.video_place{
+    width: 100%;
+    height: 100vh;
+    background-color: #9055A2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.gameplay{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    opacity: 0.3;
+    z-index: 0;
+    position: absolute;
+    filter: blur(10px);
+}
+
+.head_big_text{
+    z-index: 1;
+    color: white;
+    font-family: "big_text";
+    font-size: 90px;
+}
+
+.head_small_text{
+    z-index: 1;
+    color: white;
+    font-family: "small_text";
+    font-size: 17px;
+    width: 44%;
+    text-align: center;
+    position: relative;
+    top: 6%;
+}
+
+.section1{
+    width: 100%;
+    height: 100vh;
+    background: url(/Main/Pictures/Section1_Background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+} 
+
+.sec1_top_half{
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+}
+
+.sec1_bottom_half{
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.sec1_big_text{
+    color: white;
+    font-family: "big_text";
+    font-size: 90px;
+    width: 30%;
+    text-align: center;
+    margin-left: 8%;
+}
+
+.sec1_small_text{
+    color: white;
+    font-family: "small_text";
+    font-size: 17px;
+    text-align: center;
+    width: 40%;
+    position: relative;
+    right: 7%;
+    top: 10%;
+}
+
+.section2{
+    width: 100%;
+    height: 90vh;
+}
+
+.sec2_top{
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+}
+
+.sec2_big_text{
+    color: black;
+    font-family: "big_text";
+    font-size: 90px;
+    width: 50%;
+    text-align: center;
+    position: relative;
+    left: 5%;
+}
+
+.sec2_bottom{
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.cat_div{
+    width: 50%;
+    height: 40vh;
+    border-radius: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #9055A2;
+}
+
+.snes{
+    width: 37%;
+    height: 50vh;
+}
+
+.cat_text{
+    color: white;
+    font-family: "small_text";
+    font-size: 17px;
+    width: 90%;
+    text-align: center;
+}
+
+.button_space{
+    width: 35%;
+    height: 10vh;
+}
+
+.button_itself{
+    width: 100%;
+    height: 10vh;
+    background-color: #D9D9D9;
+    color: black;
+    font-family: "small_text";
+    font-size: 17px;
+    border-style: none;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+.cat_workspace{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+}
+
+.filters{
+    width: 25%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    visibility: visible;
+    opacity: 1;
+}
+
+.filters_ul{
+    width: 80%;
+    height: 70vh;
+    position: relative;
+    top: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.filters_ul>li{
+    list-style: none;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5%;
+    border-radius: 50px;
+    transition: 0.5s all ease;
+     color: black;
+    font-size: 17px;
+    font-family: "small_text";
+    cursor: pointer;
+}
+
+.filters_ul>li:hover{
+    background-color: #D9D9D9;
+    transition: 0.5s all ease;
+}
+
+.grey_line{
+    background-color: #D9D9D9;
+    width: 1%;
+    height: 90vh;
+}
+
+.lot_space{
+    width: 74%;
+    height: 80vh;
+    margin-top: 10vh;
+    display: flex;
+}
+
+.lot1{
+    width: 37%;
+    height: 30vh;
+    background-color: #D9D9D9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+}
+
+.lot_img{
+    width: 100%;
+    height: 19vh;
+}
+
+.img_div{
+    width: 85%;
+    height: 19vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img_div>a{
+    width: 100%;
+    height: 19vh;
+}
+
+.price_tag{
+    width: 85%;
+    height: 2.5vh;
+    display: flex;
+    align-items: center;
+    gap: 5%;
+}
+
+.red_num{
+    font-size: 17px;
+    color: red;
+    font-family: "small_text";
+    font-weight:500;
+}
+
+.grey_num{
+    font-size: 17px;
+    color: grey;
+    text-decoration: line-through;
+}
+
+.lot_name{
+    width: 85%;
+    font-size: 16px;
+    font-family: "small_text";
+}
+
+.lot1>a{
+    text-decoration: none;
+    color: black;
+    position: relative;
+    left: 7%;
+}
+
+.lot_bench{
+    width: 50%;
+    height: 30vh;
+    margin-top: 7vh;
+    margin-left: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.fav_button{
+    position: absolute;
+    width: 3%;
+    height: 6vh;
+    margin-left: 7.5%;
+    margin-top: 1vh;
+    cursor: pointer;
+}
+
+footer{
+    width: 100%;
+    height: 10vh;
+    background-color: #9055A2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+footer>p{
+    font-family: "small_text";
+    font-size: 17;
+}
+
+.filter_icon{
+    display: none;
+}
+
+.mobile{
+    display: none;
+}
+
+.filter_close{
+    display: none;
+}
+
+.tst{
+    visibility: visible;
+}
+
+.tst1{
+    visibility: hidden;
+    position: absolute;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    
+    .logo_a{
+        width: 20%;
+        height: 6vh;
+    }
+    
+    .logo_img{
+        height: 6vh;
+    }
+    
+    .search_bar{
+        background-size: 8%;
+        font-size: 13px;
+        text-indent: 8%;
+    }
+    
+    .nav_img{
+        height: 4.4vh;
+        width: 30%;
+    }
+    
+    .login_and_burger{
+        width: 13%;
+        height: 4.5vh;
+        display: flex;
+        justify-content: space-between;
+        margin-left: 5%;
+    }
+    
+    .head_big_text{
+        font-size: 70px;
+        text-align: center;
+    }
+    
+    .head_small_text{
+        z-index: 1;
+        color: white;
+        font-family: "small_text";
+        font-size: 13px;
+        width: 55%;
+        text-align: center;
+        position: relative;
+        top: 0%;
+    }
+
+    footer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    footer>p{
+        font-size: 13px;
+        text-align: center;
+        width: 80%;
+    }
+    
+    .login{
+        width: 80%;
+        justify-content: space-evenly;
+    }
+    
+    .pop_big_text{
+        font-family: "big_text";
+        font-size: 40px;
+    }
+    
+    .pop_close{
+        width: 9%;
+    }
+    
+    .burger_menu{
+        width: 40%;
+    }
+    
+    .burger_logo_close{
+        height: 4.5vh;
+        width: 10%;
+        position: relative;
+        right: 7%;
+        cursor: pointer;
+    }
+    
+    .li>ul>a{
+        font-size: 13px;
+    }
+    
+    .social_media_active{
+        font-size: 13px;
+    }
+
+    .filters_ul>li{
+        font-size: 13px;
+        width: 100%;
+    }
+
+    .lot_bench{
+        width: 70%;
+        justify-content: start;
+        gap: 5%;
+    }
+
+    .lot1{
+        width: 41%;
+    }
+
+    .img_div{
+        height: 17vh;
+    }
+
+    .lot_img{
+        height: 17vh;
+    }
+
+    .fav_button{
+        margin-left: 12%;
+        width: 5%;
+        margin-top: 0.4vh;
+    }
+
+    .red_num{
+        font-size: 13px;
+    }
+    
+    .grey_num{
+        font-size: 13px;
+        position: relative;
+        top: 0.1vh;
+    }
+    
+    .lot_name{
+        width: 85%;
+        font-size: 13px;
+    }
+
+    .price_tag{
+        margin-top: 0vh;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .pc{
+        display: none;
+    }
+
+    .mobile{
+        display: block;
+    }
+
+    .logo_a{
+        width: 10%;
+        height: 7vh;
+    }
+
+    .logo_img{
+        height: 7vh;
+    }
+
+    nav{
+        z-index: 3;
+    }
+
+    .search_bar{
+        background-size: 15%;
+        font-size: 13px;
+        text-indent: 15%;
+        margin-left: 5%;
+    }
+
+    .login_and_burger{
+        width: 17%;
+        height: 5vh;
+        display: flex;
+        justify-content: space-between;
+        margin-left: 0%;
+    }
+
+    .nav_img{
+        height: 5vh;
+        width: 40%;
+    }
+    
+    header{
+        overflow-y: hidden;
+        height: 90vh;
+        width: 100%;
+    }
+
+    .head_big_text{
+        width: 80%;
+        font-size: 60px;
+        text-align: center;
+    }
+
+    footer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    footer>p{
+        font-size: 15px;
+        text-align: center;
+        width: 90%;
+    }
+
+    .login{
+        width: 90%;
+        justify-content: space-evenly;
+    }
+    
+    .pop_big_text{
+        font-family: "big_text";
+        font-size: 29px;
+        position: relative;
+        top: 0.5vh;
+    }
+    
+    .pop_close{
+        width: 14%;
+    }
+    
+    .login_input{
+        width: 80%;
+        height: 7vh;
+        font-size: 17px;
+    }
+
+    .login{
+        border-radius: 50px;
+        justify-content: space-evenly;
+    }
+
+    .new_or_not{
+        flex-direction: column;
+        align-items: center;
+        gap: 2vh;
+        position: relative;
+        bottom: 2vh;
+    }
+
+    .down_plz{
+        margin-top: 0%;
+    }
+
+    .burger_menu{
+        width: 100%;
+    }
+    
+    .burger_logo_close{
+        height: 5vh;
+        width: 7%;
+        position: relative;
+        right: 4%;
+        cursor: pointer;
+    }
+    
+    .li>ul>a{
+        font-size: 13px;
+    }
+    
+    .social_media_active{
+        font-size: 13px;
+    }
+
+    .login_input{
+        font-size: 13px;
+    }  
+
+    .enter{
+        font-size: 13px;
+    }
+    
+    .non_style{
+        font-size: 13px;
+    }
+
+    .filters{
+        position: absolute;
+        background-color: white;
+        width: 100%;
+        z-index: 2;
+        visibility: hidden;
+        transition: 0.5s all ease;
+        right: 10%;
+        opacity: 0;
+    }
+
+    .grey_line{
+        display: none;
+    }
+
+    .lot_space{
+        width: 100%;
+    }
+
+    .lot_bench{
+        width: 90%;
+        margin-left: -2%;
+    }
+
+    .img_div{
+        height: 20vh;
+    }
+
+    .lot_img{
+        height: 20vh;
+    }
+
+    .lot1{
+        width: 45%;
+    }
+
+    .fav_button{
+        margin-left: 23%;
+        width: 10%;
+        margin-top: 0.4vh;
+    }
+
+    .red_num{
+        font-size: 13px;
+    }
+    
+    .grey_num{
+        font-size: 13px;
+        position: relative;
+        top: 0.1vh;
+    }
+    
+    .lot_name{
+        width: 85%;
+        font-size: 13px;
+    }
+
+    .price_tag{
+        margin-top: 0vh;
+        align-items: center;
+    }
+
+    .filter_icon{
+        width: 7%;
+        height: 5vh;
+        position: relative;
+        left: 2%;
+        top: 1vh;
+        display: block;
+    }
+    
+    .filter_close{
+        width: 100%;
+        position: relative;
+        top: 3vh;
+        display: block;
+    }
+
+    .filter_close>img{
+        width: 7%;
+        height: 5vh;
+        position: relative;
+        left: 2%;
+        top: 1vh;
+    }
+}
+
